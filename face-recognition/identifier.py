@@ -11,10 +11,11 @@ Il riconoscimento facciale avverrà facendo il confronto dell'immagine fornita c
 si stabilirà il risultato in base alle percentuali di corrispondenza
 '''
 
-# --------------------------------------------------------------
-
-# Function that requires file's path for copy them
 def FileCopy():
+    """
+    Requires file's path for copy them
+    """
+
     while True:
         src_path = input("Inserire il percorso sorgente del file che si desidera copiare (compreso il nome del file): ")
         if os.path.isdir(src_path) == False:
@@ -23,15 +24,13 @@ def FileCopy():
         break
     shutil.copy(src_path, dst_path)
 
-# --------------------------------------------------------------
-
-# Function to research model_name among folders
-# Args:
-#   - name: name of the folder where are stored models
-# Returns:
-#   - True: on existing folder (or correctly created)
-#   - False: on unexisting folder or on error
 def SelectSubject(name):
+    """
+    Research model_name among folders
+    
+    :param name: name of the folder where are stored models
+    """
+
     if not os.path.isdir(name):
         # If the model_name inserted has no match, user has to define the behaviour of the program
         create_new = input("Il nome non risulta essere nella lista dei soggetti memorizzati. Digitare 1 per aggiungerlo alla lista, 2 per cercare un altro nome: ")
@@ -45,15 +44,13 @@ def SelectSubject(name):
             return False
     return True
 
-# --------------------------------------------------------------
-
-# Function that preload all models
-# Args:
-#   - path: path of the folder that contains all model's images
-#   - models_list: list of all names of all images contained in the model's folder
-# Returns:
-#   - model_encoding_list: list of encodings for every image 
 def LoadModels(path, models_list):
+    """
+    Preload all models
+    
+    :param path: path of the folder that contains all model's images
+    :param models_list: list of all names of all images contained in the model's folder
+    """
     try:
         model_encodings_list = []
         for current_model in models_list:
@@ -65,10 +62,7 @@ def LoadModels(path, models_list):
         quit()
     return model_encodings_list
 
-# --------------------------------------------------------------
 
-
-# ------- MAIN PROGRAM -------
 listed = False
 while not listed:
     # Searching the name of the subject that the user is looking for around folders
