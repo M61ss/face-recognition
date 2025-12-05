@@ -1,3 +1,3 @@
 # DeepFace
 
-Refer to the [GitHub repo](https://github.com/serengil/deepface).
+Refer to the official documentation https://pypi.org/project/deepface/ and the linked GitHub repo.
