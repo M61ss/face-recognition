@@ -28,7 +28,7 @@ for file in files:
                 matches.append(file)
             else:
                 print("No match")
-            print()
+            print('')
         except Exception:
             print("No face detected")
 
