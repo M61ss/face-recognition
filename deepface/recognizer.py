@@ -18,9 +18,9 @@ matches = []
 for file in files:
     file = 'data/batch/' + file
     if os.path.isfile(file):
-        print(f"Verifing '{file}' ...")
+        print(f"Verifing '{file}'...")
         try:
-            print(f"Found {len(DeepFace.extract_faces(file))} faces ...")
+            print(f"Found {len(DeepFace.extract_faces(file))} faces...")
             output = DeepFace.verify(subject, file, model_name='DeepFace')
             print(output)
             if output['verified']:
