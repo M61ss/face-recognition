@@ -1,10 +1,10 @@
 from deepface import DeepFace
 import cv2
 
-img = cv2.imread("data/batch/20230820_193758.jpg")
+img = cv2.imread("data/batch/20240802_080633.jpg")
 
 # Resize
-max_dim = 512
+max_dim = 1024
 h, w = img.shape[:2]
 scale = max_dim / max(h, w)
 img_small = cv2.resize(img, (int(w*scale), int(h*scale)))
