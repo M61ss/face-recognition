@@ -4,7 +4,7 @@ from deepface import DeepFace   # Best model: Facenet512
 import os
 import cv2
 
-def downscale(img_path : str, index : int):
+def rescale(img_path : str, index : int):
     if os.path.isfile(img_path):
         img = cv2.imread(img_path)
         max_dim = 1024
